@@ -25,7 +25,7 @@ export default function Messages() {
           {chats.map((chat) => (
             <a
               key={chat.id}
-              href={"/mensajes/" + chat.id}
+              href={"./" + chat.id}
               style={{ display: "block", padding: "0.75rem 1rem", borderBottom: "1px solid var(--border)", textDecoration: "none" }}
             >
               <strong style={{ fontSize: "0.9rem" }}>{chat.productTitle}</strong>
