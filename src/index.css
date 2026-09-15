@@ -1,0 +1,249 @@
+:root {
+  --ink: #123B36;
+  --paper: #FBF8F2;
+  --surface: #FFFFFF;
+  --teal: #0F8A7C;
+  --teal-dark: #0B6B60;
+  --teal-light: #E4F5F1;
+  --amber: #B45309;
+  --amber-light: #FBEEE0;
+  --border: #E6E1D3;
+
+  --font-display: "Fraunces", serif;
+  --font-body: "Inter", sans-serif;
+
+  --shadow-sm: 0 1px 3px rgba(18, 59, 54, 0.06), 0 1px 2px rgba(18, 59, 54, 0.08);
+  --shadow-md: 0 4px 14px rgba(18, 59, 54, 0.09);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  line-height: 1.5;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  margin: 0 0 0.5rem;
+}
+
+a {
+  color: inherit;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Botones */
+.btn {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.7rem 1.4rem;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: background 0.15s ease, box-shadow 0.15s ease, transform 0.1s ease;
+}
+
+.btn-primary {
+  background: var(--teal);
+  color: #fff;
+  box-shadow: var(--shadow-sm);
+  text-decoration: none;
+}
+.btn-primary:hover {
+  background: var(--teal-dark);
+  box-shadow: var(--shadow-md);
+}
+.btn-primary:active {
+  transform: translateY(1px);
+}
+
+.btn-outline {
+  background: var(--surface);
+  border-color: var(--border);
+  color: var(--ink);
+  text-decoration: none;
+}
+.btn-outline:hover {
+  border-color: var(--teal);
+  color: var(--teal-dark);
+}
+
+/* Formularios */
+.field {
+  width: 100%;
+  padding: 0.7rem 0.9rem;
+  margin-bottom: 0.85rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--ink);
+  transition: box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+.field:focus {
+  outline: none;
+  border-color: var(--teal);
+  box-shadow: 0 0 0 3px var(--teal-light);
+}
+
+.form-card {
+  max-width: 420px;
+  margin: 3rem auto;
+  padding: 2.25rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  box-shadow: var(--shadow-md);
+}
+
+/* Tarjeta de producto */
+.product-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+  text-decoration: none;
+  color: var(--ink);
+  display: block;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow 0.2s ease, transform 0.15s ease;
+}
+
+.product-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.product-card img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
+}
+
+.product-card .info {
+  padding: 1rem 1.1rem;
+}
+
+.product-card h4 {
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+.product-card .price {
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: var(--teal-dark);
+  font-size: 1.15rem;
+}
+
+.product-card .sale-type {
+  font-size: 0.8rem;
+  color: #6b7370;
+}
+
+.catalog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem 0;
+}
+
+/* Insignia */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.32rem 0.8rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.badge-verified {
+  color: var(--teal-dark);
+  background: var(--teal-light);
+}
+
+.badge-unverified {
+  color: var(--amber);
+  background: var(--amber-light);
+}
+
+/* ===== Responsive ===== */
+
+@media (max-width: 640px) {
+  .container {
+    padding: 0 1rem;
+  }
+
+  .catalog-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 0.9rem;
+    padding: 1.25rem 0;
+  }
+
+  .form-card {
+    margin: 1.5rem auto;
+    padding: 1.5rem;
+    border-radius: 12px;
+  }
+
+  h2 {
+    font-size: 1.4rem;
+  }
+}
+
+.location-search {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.6rem;
+}
+
+@media (max-width: 480px) {
+  .location-search {
+    flex-direction: column;
+  }
+}
+
+.messages-layout {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.messages-sidebar {
+  width: 260px;
+  flex-shrink: 0;
+}
+
+.messages-chat {
+  flex: 1;
+  min-width: 0; /* evita que el chat empuje el ancho de la página */
+}
+
+@media (max-width: 720px) {
+  .messages-layout {
+    flex-direction: column;
+  }
+
+  .messages-sidebar {
+    width: 100%;
+  }
+}
