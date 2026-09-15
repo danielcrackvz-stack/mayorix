@@ -23,10 +23,11 @@ export default function Messages() {
             <p style={{ padding: "1rem", fontSize: "0.85rem", color: "#6b7370" }}>Todavía no tienes conversaciones.</p>
           )}
           {chats.map((chat) => (
-            <a>
+            <a
               key={chat.id}
               href={"/mensajes/" + chat.id}
               style={{ display: "block", padding: "0.75rem 1rem", borderBottom: "1px solid var(--border)", textDecoration: "none" }}
+            >
               <strong style={{ fontSize: "0.9rem" }}>{chat.productTitle}</strong>
               <p style={{ fontSize: "0.8rem", color: "#6b7370", margin: "0.2rem 0 0" }}>{chat.lastMessage}</p>
             </a>
